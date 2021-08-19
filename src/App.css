@@ -1,38 +1,324 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap');
+
+:root{
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: #0288d1;
+    --inital-padding-value-web: 20vw;
+    --inital-padding-value-mobile: 5vw;
+    --contrast-color: #015685;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Container Start */
+.container{
+    padding-left: var(--inital-padding-value-web);
+    padding-right: var(--inital-padding-value-web);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Nav Start */
+.navbar{
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding-left: var(--inital-padding-value-web);
+    padding-right: var(--inital-padding-value-web);
+    transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.App-link {
-  color: #61dafb;
+.fix-nav{
+    z-index: 2;
+    transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: var(--contrast-color);
+    height: 130px !important;
+    padding-left: var(--inital-padding-value-web);
+    padding-right: var(--inital-padding-value-web);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}  
+
+.navbar ul.top{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 90px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar ul.bottom{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+}
+
+.logo{
+    height: 40px;
+}
+
+.nav-phone{
+    font-size: 1em;
+    word-spacing: .5em;
+    color: var(--primary-color);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.nav-link{
+    list-style: none;
+    padding: 0 10px 0 10px;
+    height: 100%;
+    display: flex;
+    margin-right: 15px;
+    align-items: center;
+}
+
+.nav-link span{
+    color: var(--primary-color);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.nav-link.active{
+    border-bottom: 2px solid var(--primary-color);
+}
+
+
+/* Input Form Start */
+.inputForm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    width: 60%;
+    padding: 8px;
+    border-radius: 50px / 50px;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+.inputForm i{
+    font-size: 1.6em;
+    margin-left: 10px;
+    color: var(--secondary-color);
+}
+
+.inputForm input{
+    height: 50px;
+    border: 0;
+    width: 100%;
+    margin-left: 15px;
+    font-size: 1em;
+    font-family: "Poppins", sans-serif;
+}
+
+.inputForm input:focus{
+    border: 0 !important;
+    outline: 0  !important;
+}
+
+.inputForm button{
+    height: 50px;
+    border: none;
+    background-color: var(--secondary-color);
+    font-size: 1em;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: var(--primary-color);
+    width: 80%;
+    border-radius: 30px / 30px;
+}
+
+.inputForm button:focus{
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+/* Hero Banner */
+.banner{
+    background-color: rgb(19, 22, 24);
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url('https://www.thebalancesmb.com/thmb/PMnRwISmrQprIoM8UzS2xTLCPxw=/2121x1193/smart/filters:no_upscale()/GettyImages-956555638-5b93f5f14cedfd0025d80047.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 160px;
+    padding-bottom: 10rem;
+}
+
+/* Hero Heading */
+.hero-heading{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.hero-heading h1{
+    font-size: 2.5em;
+    line-height: 1em;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    color: var(--primary-color)
+}
+
+.hero-heading p{
+    font-size: 1.1em;
+    line-height: 1em;
+    margin-top: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Service Card Section style (section underneath the banner) */
+.overlaped{
+    margin-top: -4rem;
+}
+.cardStack{
+    background-image: linear-gradient(-15deg, var(--secondary-color), var(--contrast-color));
+    width: 100%;
+    border-radius: 10px / 10px;
+    display: flex;
+    min-height: 150px;
+    flex-wrap: wrap;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.4);
+    padding: 0 50px 0 50px;
+}
+
+.cardStack .card{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+}
+
+.cardStack .card i{
+    font-size: 3.5em;
+    color: var(--primary-color)
+}
+
+.cardStack .card h3{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    margin-left: 30px;
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+/* Extra space section */
+.extra-space{
+    height: 100vh;
+}
+
+/* Media queries for mobile friendliness */
+@media(max-width: 1050px){
+    .inputForm{
+        width: 80%;
+    }
+}
+
+@media(max-width: 850px){
+    .inputForm{
+        width: 100%;
+    }
+    .cardStack .card i{
+        font-size: 2.5em;
+    }
+    
+    .cardStack .card h3{
+        margin-left: 30px;
+        font-size: 1em;
+    }
+}
+
+@media(max-width: 650px) {
+    .cardStack{
+        padding: 0 20px 0 20px;
+    }
+    .navbar,
+    .fix-nav,
+    .container{
+        padding-left: var(--inital-padding-value-mobile);
+        padding-right: var(--inital-padding-value-mobile);
+    }
+}
+
+@media(max-width: 450px){
+    .cardStack .card i{
+        font-size: 2em;
+    }
+    
+    .cardStack .card h3{
+        margin-left: 30px;
+        font-size: 1em;
+    }
+    .logo{
+        height: 30px;
+    }
+    
+    .nav-phone{
+        font-size: 0.8em;
+        word-spacing: .3em;
+    }
+    
+    .nav-link{
+        padding: 0 5px 0 5px;
+        margin-right: 5px;
+    }
+
+    .nav-link span{
+        font-size: 0.9em;
+    }
+
+    .navbar ul.top{
+        height: 60px;
+    }
+    
+    .navbar ul.bottom{
+        height: 40px;
+    }
+    .fix-nav{
+        height: 80px !important;
+    }  
+    .banner{
+        padding-top: 100px;
+    }
+
+    .inputForm{
+        padding: 3px;
+    }
+
+    .inputForm i{
+        font-size: 1.2em;
+        margin-left: 5px;
+    }
+    
+    .inputForm input{
+        height: 40px;
+        font-size: 0.8em;
+        margin-left: 10px;
+    }
+    
+    .inputForm button{
+        height: 40px;
+        font-size: 0.8em;
+        width: 100%;
+    }
+    .hero-heading{
+        padding-top: 3rem;
+        padding-bottom: 1rem;
+    }
+    
+    .hero-heading h1{
+        font-size: 1.5em;
+    }
+    
+    .hero-heading p{
+        font-size: 0.8em;
+    }
 }
