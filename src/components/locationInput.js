@@ -53,11 +53,9 @@ const LocationInput = () => {
     const [query, setQuery] = useState("");
     const autoCompleteRef = useRef(null);
 
-    const apiKey = 'AIzaSyDuWCvB8fu8-4nvH857pHcma_jlmvLHiQc';
-
     useEffect(() => {
         loadScript(
-            `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`,
+            `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&libraries=places`,
             () => handleScriptLoad(setQuery, autoCompleteRef)
         );
     }, []);
